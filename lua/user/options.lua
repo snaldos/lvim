@@ -1,5 +1,6 @@
 local options = {
-  -- smartindent = true,
+  autoindent = true,
+  smartindent = false,
   relativenumber = true,
   shiftwidth = 2,
   tabstop = 2,
@@ -7,6 +8,7 @@ local options = {
   expandtab = true,
   showmode = true,
   guicursor = "",
+  -- guicursor = "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20",
   nu = true,
   linebreak = true,
   wrap = false,
@@ -43,6 +45,7 @@ lvim.builtin.treesitter.ensure_installed = {
 
 -- Not sure
 lvim.format_on_save.enabled = false
+-- lvim.format_on_save = true
 -- lvim.format_on_save.pattern = { "*.py" }
 
 vim.diagnostic.config({ virtual_text = true })
@@ -60,7 +63,6 @@ if vim.g.neovide then
 end
 
 lvim.log.level = "warn"
-lvim.format_on_save = true
 
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"

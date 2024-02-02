@@ -19,7 +19,7 @@ local themes = {
   nord = "nord",
 }
 
--- lvim.transparent_window = true
+lvim.transparent_window = true
 lvim.colorscheme = themes.gruvbox
 
 local extra_opts = {
