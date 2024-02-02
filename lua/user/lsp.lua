@@ -106,7 +106,7 @@ local custom_on_attach = function(client, bufnr)
   vim.keymap.set("n", "<leader>lt", "<cmd>ClangdSymbolInfo<cr>", opts)
   vim.keymap.set("n", "<leader>lm", "<cmd>ClangdMemoryUsage<cr>", opts)
 
-  require("clangd_extensions.inlay_hints").setup_autocmd()
+  -- require("clangd_extensions.inlay_hints").setup_autocmd()
   -- require("clangd_extensions.inlay_hints").set_inlay_hints()
 end
 
@@ -120,7 +120,7 @@ local custom_on_init = function(client, bufnr)
   require("clangd_extensions.config").setup {}
   require("clangd_extensions.ast").init()
   vim.cmd [[
-  command ClangdToggleInlayHints lua require('clangd_extensions.inlay_hints').toggle_inlay_hints()
+  " command ClangdToggleInlayHints lua require('clangd_extensions.inlay_hints').toggle_inlay_hints()
   command -range ClangdAST lua require('clangd_extensions.ast').display_ast(<line1>, <line2>)
   command ClangdTypeHierarchy lua require('clangd_extensions.type_hierarchy').show_hierarchy()
   command ClangdSymbolInfo lua require('clangd_extensions.symbol_info').show_symbol_info()
