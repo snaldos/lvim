@@ -142,8 +142,8 @@ lvim.plugins = {
       }
     end,
     dependencies = { 'nvim-telescope/telescope.nvim' },
-  }
-
+  },
+  { 'mg979/vim-visual-multi' },
 
 }
 
