@@ -2,7 +2,8 @@ local lvim_lsp = require('lvim.lsp')
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup({
   {
-    command = "prettierd",
+    -- command = "prettierd",
+    command = "prettier",
     args = { "--print-width", "100" },
     filetypes = {
       "javascript",
@@ -38,7 +39,11 @@ local linters = require "lvim.lsp.null-ls.linters"
 linters.setup({
   {
     command = "eslint_d",
-    filetypes = { "javascript", "typescript", "typescriptreact", "json" }
+    filetypes = { "javascript",
+    "typescript",
+    "typescriptreact",
+    -- "json"
+    }
   },
   {
     command = "flake8",
@@ -160,8 +165,25 @@ ts.setup({
 --     "--stdio",
 --   },
 -- })
---
 
+-- emmet_ls
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+opts = {
+  -- on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = { "css", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "svelte", "pug", "typescriptreact", "vue" },
+  init_options = {
+    html = {
+      options = {
+        -- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
+        ["bem.enabled"] = true,
+      },
+    },
+  }
+}
+require("lvim.lsp.manager").setup("emmet_ls", opts)
 
 --Other
 lvim.lsp.on_attach_callback = function(client, bufnr)
