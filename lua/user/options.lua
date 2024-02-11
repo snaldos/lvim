@@ -31,6 +31,7 @@ lvim.builtin.treesitter.ensure_installed = {
   "bash",
   "c",
   "cpp",
+  "c_sharp",
   "javascript",
   "json",
   "lua",
@@ -50,6 +51,7 @@ lvim.format_on_save.enabled = false
 
 vim.diagnostic.config({ virtual_text = true })
 lvim.builtin.treesitter.highlight.enable = true
+lvim.builtin.treesitter.autotag.enable = true
 
 if vim.g.neovide then
   vim.opt.guifont = "MonoLisa:h24"
@@ -83,6 +85,11 @@ lvim.builtin.project.patterns = {
 
 lvim.builtin.telescope.defaults.path_display = {
   shorten = 4,
+}
+
+--init tailwind-colorizer-cmp
+lvim.builtin.cmp.formatting = {
+  format = require("tailwindcss-colorizer-cmp").formatter
 }
 
 -- Disable codium
