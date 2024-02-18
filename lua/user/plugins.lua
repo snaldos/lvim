@@ -155,11 +155,17 @@ lvim.plugins = {
         filetypes = {
           'css',
           'javascript',
+          'javascriptreact',
           'html',
+          "typescript",
+          "typescriptreact",
+          "scss",
+          "lua",
           -- html = { mode = 'foreground', }
         },
         user_default_options = {
-          tailwind = true,
+          -- tailwind = true,
+          tailwind = "both",
         }
       })
     end,
