@@ -197,6 +197,9 @@ lvim.plugins = {
       }
     end
   },
+  {
+    "prettier/vim-prettier"
+  },
 
 }
 

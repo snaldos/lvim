@@ -24,11 +24,11 @@ formatters.setup({
     }
   },
   {
-    command = "black" ,
+    command = "black",
     filetype = { "python" }
   },
   {
-    command = "clang_format" ,
+    command = "clang_format",
     args = { "--style=chromium" },
     filetypes = { "c", "cpp" }
   },
@@ -37,19 +37,19 @@ formatters.setup({
 
 local linters = require "lvim.lsp.null-ls.linters"
 linters.setup({
-  {
-    command = "eslint_d",
-    filetypes = { "javascript",
-    "typescript",
-    "typescriptreact",
-    -- "json"
-    }
-  },
+  -- {
+  --   command = "eslint_d",
+  --   filetypes = { "javascript",
+  --     "typescript",
+  --     "typescriptreact",
+  --     "json"
+  --   }
+  -- },
   {
     command = "flake8",
     filetypes = { "python" },
   },
-	{
+  {
     name = "cpplint",
     filetypes = { "cpp" }
   },
@@ -70,7 +70,7 @@ vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "tsserver" }
 -- Python
 -- restart the language server after changing virtual enviromnent
 require('swenv').setup({
-  post_set_venv = function ()
+  post_set_venv = function()
     vim.cmd("LspRestart")
   end,
 })
@@ -87,9 +87,9 @@ local clangd_flags = {
   "--suggest-missing-includes",
   "--cross-file-rename",
   "--completion-style=detailed",
-  "--pch-storage=memory", -- could also be disk
+  "--pch-storage=memory",     -- could also be disk
   "--folding-ranges",
-  "--enable-config", -- clangd 11+ supports reading from .clangd configuration file
+  "--enable-config",          -- clangd 11+ supports reading from .clangd configuration file
   "--offset-encoding=utf-16", --temporary fix for null-ls
   -- "--limit-references=1000",
   -- "--limit-resutls=1000",
